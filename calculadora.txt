@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+float a, b; //a = n1 b = n2
+    char op; // op = operadores
+        int r; // r = raiz
+
+    do { // loop
+        printf("Autor: Bárbara Victória Garcia\nCurso: Análise e Desenvolvimento de Sistemas\nUniversidade: La Salle\nMatrícula: 202213281\n");
+        printf("Calculadora\n");
+        printf("\nEscolha qual operação deseja realizar entre 1. Raiz quadrada, 2. Operadores e 3. Sair\n");
+            scanf("%i", &r); //entrada de escolha entre 1 e 2
+                if(r != 1 && r != 2 && r != 3) 
+                {
+                    printf ("Valor inválido, favor escolher entre 1, 2 e 3\n");
+                }
+                    else if(r == 1) //entrar raiz
+                     {
+                        printf("Digite o valor desejado para calcular a raiz quadrada\nExemplo: 10.00");
+                            scanf ("%f", &a); //calcula raiz quadrada
+                        printf("%f \n", sqrt(a)); //retorna a raiz
+                     }
+                    else if(r == 2) //entrar operadores
+                    {
+                        printf("soma '+'\n");
+                        printf("subtração '-'\n");
+                        printf("multiplicação '*'\n");
+                        printf("divisão '/'\n");
+                        printf("potência '^'\n");
+                            printf("Digite a operação como n1 operador n2\nExemplo: 2+2\n");
+                                scanf("%f", &a); //entrada n1
+                                scanf("%c", &op); //entrada operador
+                                scanf("%f", &b); //entrada n2
+                        switch(op) //seleciona o operador
+                        {
+                        case '+':
+                            printf("%.2f\n", a + b); //adiçao
+                                break;
+                        case '-':
+                            printf("%.2f\n", a - b); //subtraçao
+                                break;
+                        case '*':
+                            printf("%.2f\n", a * b); //multiplicaçao
+                                break;
+                        case '/':
+                            if(b != 0)
+                                printf("%.2f\n", a / b); //divisao
+                                    else
+                                        printf("Divisão por 0 inexistente\n");
+                                            break;
+                        case '^':
+                            printf("%.2f\n", pow(a, b)); // potencia
+                                break;
+                        default:
+                        if(a != 0 && op != '0' && b != 0)
+                            printf(" Operador invalido\n\n ");
+                      
+                        }
+                        
+                    }
+                    else if( r==3 ) //sair da calculadora
+                    exit(0);
+                    
+    }
+    while(a != 0 && op != '0' && b != 0);
+    return 0;
+   
+}
